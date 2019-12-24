@@ -27,7 +27,7 @@ class MainWin(QtWidgets.QMainWindow, view.Ui_MainWindow):
         # signals
         self.treeWidget.itemClicked.connect(self.on_item_clicked_menu)
         self.actionAdd_project.triggered.connect(lambda: add_project(self))
-        self.actionDelete_this_project.triggered.connect(lambda: delete_project(self, self.current_project))
+        self.actionDelete_this_project.triggered.connect(lambda: delete_project(self))
         signal.update_menu.connect(self.update_left_menu)
         signal.update_coord.connect(self.update_coord)
 
@@ -57,7 +57,7 @@ class MainWin(QtWidgets.QMainWindow, view.Ui_MainWindow):
         if NAME_CONFIG_PROJECT_FILE in os.listdir(os.path.join(PKG_DIR, SUBJECT_DIR_NAME, self.current_project)):
             self.update_coord()
             return
-        project_analysis(self, self.current_project)
+        project_analysis(self)
 
     def update_graph(self):
         self.widget.canvas.axes.clear()

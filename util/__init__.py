@@ -106,21 +106,21 @@ def add_project(self):
         run_waiting(self, lambda: copy_tree(folder_path, os.path.join(PKG_DIR, SUBJECT_DIR_NAME, name)))
 
 
-def delete_project(self, project_name: str) -> None:
-    if not project_name:
+def delete_project(self) -> None:
+    if not self.current_project:
         msg_info(self, 'No project selected.', 'Please select a project to delete.')
         return
 
-    dialog_result: int = msg_question(self, 'Are you sure you want to delete the project?', project_name)
+    dialog_result: int = msg_question(self, 'Are you sure you want to delete the project?', self.current_project)
     if dialog_result == DIALOG_OK:
-        run_waiting(self, lambda: __delete_project(project_name))
+        run_waiting(self, lambda: __delete_project(self.current_project))
 
 
-def project_analysis(self, project_name: str):
+def project_analysis(self):
     dialog_result: int = msg_question(self, 'This project does not exist in the database.',
-                                      'Perform parsing and display on a graph?', project_name)
+                                      'Perform parsing and display on a graph?', self.current_project)
     if dialog_result == DIALOG_OK:
-        run_waiting(self, lambda: __project_analysis(project_name))
+        run_waiting(self, lambda: __project_analysis(self.current_project))
 
 
 @run_thread()
