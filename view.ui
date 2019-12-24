@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>JavaParserAI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="headerCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="headerShowSortIndicator" stdset="0">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>project</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="mathlibplot_widget" name="widget" native="true"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAdd_project"/>
+    <addaction name="actionDelete_this_project"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="actionAdd_project">
+   <property name="text">
+    <string>Add project</string>
+   </property>
+  </action>
+  <action name="actionDelete_this_project">
+   <property name="text">
+    <string>Delete this project</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>mathlibplot_widget</class>
+   <extends>QWidget</extends>
+   <header>mathlibplot_widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
