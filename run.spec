@@ -1,7 +1,7 @@
 # -*- mode: python -*-
 import os, sys
 block_cipher = None
-CONSOLE = True # True - console. False - no console.
+CONSOLE = False # True - console. False - no console.
 
 a = Analysis(['javaparser.py', 'run.spec'],
              pathex=[os.path.abspath('')],
@@ -15,6 +15,8 @@ a = Analysis(['javaparser.py', 'run.spec'],
              win_private_assemblies=False,
              cipher=block_cipher,
              noarchive=False)
+
+a.datas += Tree('img', prefix='img')
 
 pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
